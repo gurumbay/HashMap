@@ -1,4 +1,4 @@
-#include "Dictionary.h"
+#include "../include/Dictionary.h"
 
 
 Dictionary::Dictionary(std::size_t capacity) : HashMap::HashMap(capacity)

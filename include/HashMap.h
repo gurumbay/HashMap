@@ -6,7 +6,7 @@
 
 namespace detail
 {
-  constexpr float DEFAULT_MAX_LOAD_FACTOR = 0.66f;
+  static float DEFAULT_MAX_LOAD_FACTOR = 0.66f;
 }
 
 template <class Key, class T, class Hash = std::hash<Key>>
@@ -168,7 +168,7 @@ typename HashMap<Key, T, Hash>::iterator HashMap<Key, T, Hash>::begin()
 template <class Key, class T, class Hash>
 typename HashMap<Key, T, Hash>::iterator HashMap<Key, T, Hash>::end()
 {
-  return iterator(buckets_ + bucketCount_, buckets_ + bucketCount_, BucketType::iterator());
+  return iterator(buckets_ + bucketCount_, buckets_ + bucketCount_, typename BucketType::iterator());
 }
 
 template <class Key, class T, class Hash>
@@ -180,7 +180,7 @@ typename HashMap<Key, T, Hash>::const_iterator HashMap<Key, T, Hash>::cbegin() c
 template <class Key, class T, class Hash>
 typename HashMap<Key, T, Hash>::const_iterator HashMap<Key, T, Hash>::cend() const
 {
-  return const_iterator(buckets_ + bucketCount_, buckets_ + bucketCount_, BucketType::iterator());
+  return const_iterator(buckets_ + bucketCount_, buckets_ + bucketCount_, typename BucketType::iterator());
 }
 
 template <class Key, class T, class Hash>

@@ -2,8 +2,9 @@
 #include <fstream>
 #include <sstream>
 #include <limits>
-#include "Dictionary.h"
-#include "LinkedList.h"
+#include "../include/Dictionary.h"
+#include "../include/LinkedList.h"
+
 
 void loadDictionaryFromFile(Dictionary& dict);
 void showDictionaryStats(const Dictionary& dict);
@@ -20,7 +21,7 @@ void testSortedUniqueList();
 
 int main()
 {
-  std::system("chcp 1251 > nul");  // Поддержка кириллицы в Windows
+  // std::system("chcp 1251 > nul");  // Поддержка кириллицы в Windows
   Dictionary dict;
   bool keepRunning = true;
 
@@ -64,7 +65,7 @@ int main()
       std::cerr << "Invalid option. Please try again.\n";
     }
   }
-  return EXIT_SUCCESS;
+  return 0;
 }
 
 void loadDictionaryFromFile(Dictionary& dict)
